@@ -76,3 +76,6 @@ export const updateAdminStore = async (id, data) =>
 
 export const deleteAdminStore = async (id) =>
   api.delete(`/api/admin/stores/${id}`);
+
+export const getAdminDashboard = async () =>
+  api.get('/api/admin/dashboard');
