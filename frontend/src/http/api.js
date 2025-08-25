@@ -55,3 +55,24 @@ export const updateAdminUser = async (id, data) =>
 
 export const deleteAdminUser = async (id) =>
   api.delete(`/api/admin/users/${id}`);
+
+export const getAdminStores = async ({ name = "", address = "", sort = "createdAt", order = "desc" } = {}) => {
+  const params = new URLSearchParams();
+  if (name) params.append("name", name);
+  if (address) params.append("address", address);
+  if (sort) params.append("sort", sort);
+  if (order) params.append("order", order);
+
+  const queryString = params.toString();
+
+  return api.get(`/api/admin/stores${queryString ? `?${queryString}` : ""}`);
+};
+
+export const createAdminStore = async (data) =>
+  api.post('/api/admin/stores', data);
+
+export const updateAdminStore = async (id, data) =>
+  api.patch(`/api/admin/stores/${id}`, data); 
+
+export const deleteAdminStore = async (id) =>
+  api.delete(`/api/admin/stores/${id}`);
