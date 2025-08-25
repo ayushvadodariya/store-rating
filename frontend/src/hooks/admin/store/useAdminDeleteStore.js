@@ -19,6 +19,9 @@ export function useAdminDeleteStore(options = {}) {
       // Invalidate and refetch stores query
       queryClient.invalidateQueries({ queryKey: ["admin", "stores"] });
 
+      // invalidate dashboard query to update stats and recent users
+      queryClient.invalidateQueries({ queryKey: ["admin", "dashboard"] });
+
       if (showSuccessToast) {
         toast.success("Store deleted successfully", {
           description: "The store has been removed from the system"

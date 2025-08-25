@@ -19,6 +19,9 @@ export function useAdminCreateStore(options = {}) {
       // Invalidate and refetch stores query
       queryClient.invalidateQueries({ queryKey: ["admin", "stores"] });
 
+      // invalidate dashboard query to update stats and recent stores
+      queryClient.invalidateQueries({ queryKey: ["admin", "dashboard"] });
+
       if (showSuccessToast) {
         toast.success("Store created successfully", {
           description: `${response.data.data.store.name} has been added to the system`

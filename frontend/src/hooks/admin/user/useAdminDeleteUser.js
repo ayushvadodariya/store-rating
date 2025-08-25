@@ -19,6 +19,9 @@ export function useAdminDeleteUser(options = {}) {
       // Invalidate and refetch users query to update the list
       queryClient.invalidateQueries({ queryKey: ["admin", "users"] });
 
+      // invalidate dashboard query to update stats and recent users
+      queryClient.invalidateQueries({ queryKey: ["admin", "dashboard"] });
+
       if (showSuccessToast) {
         toast.success("User deleted successfully", {
           description: "The user has been removed from the system"

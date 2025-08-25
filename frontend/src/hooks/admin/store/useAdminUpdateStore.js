@@ -20,6 +20,9 @@ export function useAdminUpdateStore(options = {}) {
       queryClient.invalidateQueries({ queryKey: ["admin", "stores"] });
       queryClient.invalidateQueries({ queryKey: ["admin", "store", response.data.id] });
 
+      // invalidate dashboard query to update stats and recent users
+      queryClient.invalidateQueries({ queryKey: ["admin", "dashboard"] });
+
       if (showSuccessToast) {
         toast.success("Store updated successfully", {
           description: `${response.data.name} has been updated`

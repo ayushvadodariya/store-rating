@@ -19,6 +19,9 @@ export function useAdminCreateUser(options = {}) {
       // Invalidate and refetch users query to update the list
       queryClient.invalidateQueries({ queryKey: ["admin", "users"] });
 
+      // invalidate dashboard query to update stats and recent users
+      queryClient.invalidateQueries({ queryKey: ["admin", "dashboard"] });
+
       if (showSuccessToast) {
         toast.success("User created successfully", {
           description: `${response.data.name} has been added to the system`
