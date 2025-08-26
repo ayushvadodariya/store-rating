@@ -124,8 +124,6 @@ export const getOwnerRatings = async ({
   limit = 10,
   sort = "date_newest",
   minRating = 0,
-  maxRating = 5,
-  search = ""
 } = {}) => {
   const params = new URLSearchParams();
   if (page) params.append("page", page.toString());
@@ -136,3 +134,12 @@ export const getOwnerRatings = async ({
   const queryString = params.toString();
   return api.get(`/api/owner/ratings${queryString ? `?${queryString}` : ""}`);
 };
+
+export const getUserProfile = async () =>
+  api.get(`/api/auth/profile`);
+
+export const updateUserProfile = async (data) =>
+  api.patch(`/api/auth/profile`, data);
+
+export const updatePassword = async (data) =>
+  api.patch(`/api/auth/password`, data);
