@@ -115,3 +115,24 @@ export const updateUserRating = async (ratingId, data) =>
 
 export const deleteUserRating = async (ratingId) =>
   api.delete(`/api/user/ratings/${ratingId}`);
+
+export const getOwnerDashboard = async () =>
+  api.get(`/api/owner/dashboard`);
+
+export const getOwnerRatings = async ({
+  page = 1,
+  limit = 10,
+  sort = "date_newest",
+  minRating = 0,
+  maxRating = 5,
+  search = ""
+} = {}) => {
+  const params = new URLSearchParams();
+  if (page) params.append("page", page.toString());
+  if (limit) params.append("limit", limit.toString());
+  if (sort) params.append("sort", sort);
+  if (minRating) params.append("minRating", minRating.toString());
+
+  const queryString = params.toString();
+  return api.get(`/api/owner/ratings${queryString ? `?${queryString}` : ""}`);
+};

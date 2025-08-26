@@ -11,7 +11,7 @@ import UserLayout from "@/layouts/UserLayout";
 import OwnerLayout from "@/layouts/OwnerLayout";
 import AdminHomePage from "@/pages/admin/AdminHomePage";
 import OwnerHomePage from "@/pages/owner/OwnerHomePage";
-import OwnderRatingPage from "./pages/owner/OwnderRatingPage";
+import OwnerRatingsPage from "./pages/owner/OwnerRatingsPage";
 import AdminUsersPage from "./pages/admin/AdminUsersPage";
 import AdminStoresPage from "./pages/admin/AdminStoresPage";
 
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         element: <OwnerLayout />,
         children: [
           { path: ROUTES.OWNER.BASE, element: <OwnerHomePage /> },
-          { path: ROUTES.OWNER.RATINGS, element: <OwnderRatingPage/> },
+          { path: ROUTES.OWNER.RATINGS, element: <OwnerRatingsPage /> },
           { path: ROUTES.OWNER.PROFILE, element: <ProfilePage /> }
         ]
       },
