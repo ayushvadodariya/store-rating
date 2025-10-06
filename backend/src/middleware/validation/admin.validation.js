@@ -2,7 +2,7 @@ import {
   createUserSchema,
   createStoreWithOwnerSchema,
   adminUserUpdateSchema
-} from '../../../../common/zod/types.js';
+} from '../../types.js';
 
 // Middleware factory for validating requests using Zod schemas
 const validateRequest = (schema) => {

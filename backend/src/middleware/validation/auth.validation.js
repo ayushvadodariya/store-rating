@@ -2,7 +2,7 @@ import {
   registerSchema, 
   loginSchema, 
   passwordUpdateSchema 
-} from '../../../../common/zod/types.js';
+} from '../../types.js';
 
 // Middleware factory for validating requests using Zod schemas
 const validateRequest = (schema) => {

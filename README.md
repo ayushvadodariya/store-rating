@@ -2,7 +2,7 @@
 
 ## Deployment Links
 - Frontend: [https://store-rating-sage.vercel.app](https://store-rating-sage.vercel.app)
-- Backend: [https://store-rating-uojs.onrender.com](https://store-rating-uojs.onrender.com)
+- Backend: [https://store-rating-1-7gao.onrender.com](https://store-rating-1-7gao.onrender.com)
 
 ## Project Overview
 This is a store rating system that allows users to rate and review stores. The application consists of a frontend built with React and a backend API built with Node.js.

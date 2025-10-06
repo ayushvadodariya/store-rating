@@ -2,7 +2,7 @@ import prisma from '../utils/prisma.js';
 import { 
   ratingCreateSchema, 
   ratingUpdateSchema 
-} from '../../../common/zod/types.js';
+} from '../types.js';
 
 /**
  * Middleware to verify the user has 'user' role
